@@ -16,10 +16,11 @@
     --user-color-second: #06181C;
     --button-color: #065E7C;
     --button-color-hover: #FFF;
+    --border-color: #4A808C;
 }
 
 .app {
-    max-width: 1220px;
+    max-width: 1120px;
     margin: 0 auto;
 }
 
@@ -35,7 +36,8 @@ body {
 
 header {
     display: flex;
-    justify-content: space-around;
+    gap: 29.3rem;
+    justify-content: flex-start;
 
     margin: 11.5rem 0 8.7rem 0;
 }
@@ -88,4 +90,81 @@ header {
 .search button:hover {
     color: var(--button-color);
     background-color: var(--text-color);
+}
+
+.border {
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;  
+}
+
+table * {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+table th {
+    background: var(--tb-color);
+    font-weight: normal;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+table th:first-child {
+    border-top-left-radius: .4rem;
+}
+
+table th:last-child {
+    border-top-right-radius: .4rem;
+}
+
+table tr:nth-child(even) {
+    background: var(--user-color-second);
+    border: 1px solid var(--border-color);
+}
+
+table tr:nth-child(odd) {
+    background: var(--user-color-primary);
+}
+
+
+table td {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+td.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+td.user img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td.user a {
+    text-decoration: none;
+}
+
+td.user a p {
+    font-weight: bold;
+
+}
+
+td .remove {
+    background: none;
+    border: none;
+    
+    color: red;
+    cursor: pointer;
 }
