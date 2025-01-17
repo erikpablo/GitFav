@@ -98,6 +98,29 @@ header {
     border: 1px solid var(--border-color);
 }
 
+.noFavorites {
+    height: 68rem;
+    background-color: var(--user-color-primary);
+}
+
+.noFav p {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #4E5455;
+}
+
+.noFav {
+    position: absolute;
+    top: 50%;
+    right: 30%; 
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+
 table {
     width: 100%;
     border-collapse: collapse;  
@@ -167,4 +190,8 @@ td .remove {
     
     color: red;
     cursor: pointer;
+}
+
+.none {
+    display: none;
 }

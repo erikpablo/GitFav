@@ -9,9 +9,25 @@ export class Favorites {
         this.load()
     }
 
+    removeNoFav() {
+        const noFav = document.querySelector('.noFav')
+        const border = document.querySelector('.border')
+
+        if(!this.entries || this.entries.length === 0) {
+            noFav.classList.remove('none')
+            border.classList.add('noFavorites')
+        } else {
+            noFav.classList.add('none')
+            border.classList.remove('noFavorites')
+        }
+
+    }
+
     load() {
         this.entries = JSON.parse(localStorage.getItem
             ('@github-favorites:')) || []
+
+        this.removeNoFav()
     }
 
     save() {
@@ -35,6 +51,7 @@ export class Favorites {
             this.entries = [user, ...this.entries]
             this.update()
             this.save()
+            this.removeNoFav()
 
             } catch(erro) {
                 alert(erro.message)
@@ -48,6 +65,7 @@ export class Favorites {
         this.entries = filteredEntries
         this.update()
         this.save()
+        this.removeNoFav()
     }
 }
 
@@ -121,10 +139,11 @@ export class FavoritesView extends Favorites {
             return tr
     }
 
-    removeAllTr() {
-        this.tbody.querySelectorAll('tr')
-        .forEach((tr) => {
-            tr.remove()
-        })
+    removeAllTr() { 
+            this.tbody.querySelectorAll('tr')
+            .forEach((tr) => {
+                tr.remove()
+            })
     }
 }
+
