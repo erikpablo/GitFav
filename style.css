@@ -120,14 +120,10 @@ header {
 }
 
 .noFav {
-    position: absolute;
-    top: 50%;
-    right: 30%; 
-
     display: flex;
     align-items: center;
-    gap: 2rem;
-
+    gap: 5rem;
+    margin: 25rem;
 }
 
 
